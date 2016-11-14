@@ -1,0 +1,215 @@
+<ion-view title="社区">
+    <ion-nav-buttons class="bar-calm" side="right" >
+        <button class="button button-icon ion-ios-search"></button>
+    </ion-nav-buttons>
+
+    <!--社区的三个选项卡-->
+    <ion-nav-view>
+        <ion-tabs class="tabs-light tabs-icon-top tabs-top ">
+
+            <!--精选-->
+            <ion-tab title="精选" icon-on="ion-happy"
+                     icon-off="ion-happy-outline" >
+                <ion-content>
+                    <!--<h1>Deadlines</h1>-->
+                    <!--<h3>Deadlines</h3>-->
+                    <ion-slide-box auto-play="true" does-continue="true" slide-interval="2500" show-pager="true">
+                        <ion-slide>
+                            <div class="box"><img src="images/shequbanner_02.png" style="width: 100%"/></div>
+                        </ion-slide>
+                        <ion-slide>
+                            <div class="box"><img src="images/shequbannerto_02.png"  style="width: 100%"/></div>
+                        </ion-slide>
+                        <ion-slide>
+                            <div class="box"><img src="images/shequbannertoo_02.png"  style="width: 100%"/></div>
+                        </ion-slide>
+                    </ion-slide-box>
+                    <div class="center-tit" style="border-bottom: 1px solid #f2f2f2;">
+                        <a href="#" class="wenzhang">每日精选</a>
+                        <img src="images/018_03.png" class="more">
+                    </div>
+                    <!--每日精选内容-->
+                    <ion-list>
+                        <ion-item ng-repeat="jingxuan in jingxuans" class=" item-remove-animate">
+                            <div class="item item-avatar-left">
+                                <img ng-src="{{jingxuan.img}}"/>
+                                <p class="title" style="font-weight: bolder">{{jingxuan.eng}}<span style="float: right;font-weight: normal">{{jingxuan.time}}</span></p>
+                                <p>{{jingxuan.name}}</p>
+                            </div>
+                            <div class="item item-body">
+                                <img class="full-image" ng-src="{{jingxuan.pic}}"/>
+                                <p style="margin-top: 2%">{{jingxuan.ma}}</p>
+                            </div>
+                        </ion-item>
+                        <!--无限滚动（上拉刷新）-->
+                        <ion-infinite-scroll distance="1%" immediate-check="false" on-infinite="loadMoretoo()"></ion-infinite-scroll>
+                    </ion-list>
+                </ion-content>
+                <div id="top" ng-click="top()" class="icon ion-ios-arrow-up"></div>
+            </ion-tab>
+
+            <!--圈子-->
+            <ion-tab title="圈子" icon-on="ion-ios-home"
+                     icon-off="ion-ios-home-outline" >
+                <ion-content has-header="true">
+                    <h1 style="color:#fff ">33333333</h1>
+                    <h1 style="color:#fff ">33333333</h1>
+                    <div class="row" style="margin-left: 5%; ">
+                        <div class="col-20"><a href="#" style="color:#666666;font-size: 1em">晒鲜花</a> </div>
+                        <div class="col-20"><a href="#" style="color:#666666;font-size: 1em">晒植物</a></div>
+                        <div class="col-20"><a href="#" style="color:#666666;font-size: 1em">晒家装</a></div>
+                        <div class="col-20"><a href="#" style="color:#666666;font-size: 1em">晒心情</a></div>
+                        <div class="col-20"><a href="#" style="color:#666666;font-size: 1em">晒小物</a></div>
+                    </div>
+                    <div style="height: 1%;width: 100%;background-color:#f2f2f2;color:#f2f2f2;margin-top: 1%; ">1</div>
+                    <!--晒鲜花-->
+                    <div class="list">
+                        <div class="item item-avatar">
+                            <img src="images/oo.jpg">
+                            <h2>普罗修斯<span style="float: right;" class="icon ion-ios-keypad-outline"></span></h2>
+                            <p>怀抱满天星的淡淡幽香</p>
+                        </div>
+
+                        <div class="item item-image">
+                            <div class="row">
+                                <div class="col-50"><img src="images/lixia.jpg"></div>
+                                <div class="col-50"><img src="images/xiaoman.jpg"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-50"><img src="images/mangzhong.jpg"></div>
+                                <div class="col-50"><img src="images/xiazhi.jpg"></div>
+                            </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #f2f2f2;margin: 0 auto">
+                            <div class="col-33 " style="margin-left: 10%;color: #666"><a href="#" class="icon ion-ios-heart-outline" style="color: #666"></a> 190</div>
+                            <div class="col-33" style="color: #666"><a href="#" class="icon ion-ios-chatboxes-outline" style="color: #666"></a> 45</div>
+                            <div class="col-33" style="color: #666"><a href="#" class="icon ion-ios-redo-outline" style="color: #666"></a> 转发</div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item item-avatar">
+                            <img src="images/pp.jpg">
+                            <h2>卡丹<span style="float: right;" class="icon ion-ios-keypad-outline"></span></h2>
+                            <p>那些读不懂的诗和远方，只是因为穷而已</p>
+                        </div>
+
+                        <div class="item item-image">
+                            <img src="images/ss.jpg">
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #f2f2f2;margin: 0 auto">
+                            <div class="col-33 " style="margin-left: 10%;color: #666"><a href="#" class="icon ion-ios-heart-outline" style="color: #666"></a> 260</div>
+                            <div class="col-33" style="color: #666"><a href="#" class="icon ion-ios-chatboxes-outline" style="color: #666"></a> 99</div>
+                            <div class="col-33" style="color: #666"><a href="#" class="icon ion-ios-redo-outline" style="color: #666"></a> 转发</div>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="item item-avatar">
+                            <img src="images/ll.jpg">
+                            <h2>涟涟<span style="float: right;" class="icon ion-ios-keypad-outline"></span></h2>
+                            <p>怀抱满天星的淡淡幽香</p>
+                        </div>
+
+                        <div class="item item-image">
+                            <img src="images/aa.jpg">
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #f2f2f2;margin: 0 auto">
+                            <div class="col-33 " style="margin-left: 10%;color: #666"><a href="#" class="icon ion-ios-heart-outline" style="color: #666"></a> 190</div>
+                            <div class="col-33" style="color: #666"><a href="#" class="icon ion-ios-chatboxes-outline" style="color: #666"></a> 45</div>
+                            <div class="col-33" style="color: #666"><a href="#" class="icon ion-ios-redo-outline" style="color: #666"></a> 转发</div>
+                        </div>
+                    </div>
+                </ion-content>
+            </ion-tab>
+
+            <!--订阅-->
+            <ion-tab title="订阅" icon-on="ion-ios-bookmarks"
+                     icon-off="ion-ios-bookmarks-outline" >
+                <div>
+                    <div class="list ">
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/mm.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/3.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/banner2.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/4.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/jj.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/touxing.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/5.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/mm.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/3.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/banner2.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/4.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/jj.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/touxing.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                        <a class="item item-thumbnail-left" href="#">
+                            <img src="images/5.jpg">
+                            <h2>Pretty Hate Machine</h2>
+                            <p>Nine Inch Nails</p>
+                        </a>
+                    </div>
+                </div>
+            </ion-tab>
+        </ion-tabs>
+
+    </ion-nav-view>
+
+    <!--<ion-content>-->
+        <!--&lt;!&ndash;<a ui-sref="tabs.home">返回首页</a><br>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a ui-sref="tabs.quanzi">去圈子页面</a>&ndash;&gt;-->
+        <!--<a href="#/tabs/quanzi?id=1&title=aa" style="color: #333333">精选</a>-->
+
+        <!--<a href="#/tabs/quanzi?id=2&title=bb" >圈子</a>-->
+
+        <!--<a href="#/tabs/quanzi?id=3&title=cc" >订阅</a><br>-->
+    <!--</ion-content>-->
+</ion-view>

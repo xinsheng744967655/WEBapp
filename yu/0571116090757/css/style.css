@@ -1,0 +1,16 @@
+body{Font-size:62.5%}
+.title-top{background-color: #f2f2f2;}
+
+.sizi{width:100%;}
+.sizi-sm{width:95%;}
+.mg-rig{margin-right:5%; }
+a{text-decoration: none}
+.wenzhang{color: #333333;font-size: 1em;font-family: "微软雅黑";margin-left: 5%;}
+.center-tit{margin-top: 10px;position: relative;}
+.shipin{color: #999;font-size: 1em;font-family: "微软雅黑";margin-left: 5%;}
+.more{position:absolute;top:-12%;right:3%;width: 5%;}
+#top{width: 30px;height: 30px;border-radius: 50px;text-align: center;
+    line-height: 30px;color: white;background-color: #cecfd2;cursor: pointer;position: absolute;bottom: 50px;right: 0;opacity:0.5;}
+.shouye{color:#eaa956 }
+.shequ{color: #333333}
+.shequto{color: #999999}

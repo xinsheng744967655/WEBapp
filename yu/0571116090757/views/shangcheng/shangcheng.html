@@ -1,0 +1,66 @@
+<ion-view title="商城">
+    <ion-nav-buttons class="bar-calm" side="right" >
+        <button class="button button-icon ion-ios-search"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <ion-slide-box auto-play="true" does-continue="true" slide-interval="2500" show-pager="true">
+            <ion-slide>
+                <div class="box"><img src="images/shangcheng.jpg" style="width: 100%"/></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><img src="images/changch.jpg"  style="width: 100%"/></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><img src="images/shangc.jpg"  style="width: 100%"/></div>
+            </ion-slide>
+        </ion-slide-box>
+
+        <div class="row" style="padding: 0;margin-bottom: 1%">
+            <div class="col-24" >
+                <img src="images/xiaitu_02.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24">
+                <img src="images/xiaitu_04.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24">
+                <img src="images/xiaitu_06.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24" style="margin: 0">
+                <img src="images/xiaitu_08.png" class="sizi-sm "/>
+            </div>
+        </div>
+        <div class="row" style="padding: 0;">
+            <div class="col-24">
+                <img src="images/xiaitu_13.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24">
+                <img src="images/xiaitu_14.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24">
+                <img src="images/xiaitu_15.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24" style="padding: 0">
+                <img src="images/xiaitu_16.png" class="sizi-sm "/>
+            </div>
+        </div>
+
+        <div class="center-tit">
+            <a href="#" class="wenzhang" >精选</a>
+        </div>
+
+        <ion-list>
+            <ion-item ng-repeat="shangpin in shangpins" class=" item-remove-animate">
+                <div class="center-inner" style="position: relative;">
+                    <img ng-src="{{shangpin.img}}" style="width: 95%;margin-left: 2.5%;"/>
+                    <p style="color: #323431;position: absolute;top: 140px;left: 30px;">{{shangpin.eng}}</p>
+                    <p style="color: #323431;position: absolute;top: 160px;left: 30px;">{{shangpin.name}}</p>
+                    <p style="color: #ef8703;position: absolute;top: 180px;left: 30px;">{{shangpin.ma}}</p>
+                </div>
+            </ion-item>
+            <!--无限滚动（上拉刷新）-->
+            <ion-infinite-scroll distance="1%" immediate-check="false" on-infinite="loadMoreto()"></ion-infinite-scroll>
+        </ion-list>
+    </ion-content>
+
+    <div id="top" ng-click="top()" class="icon ion-ios-arrow-up"></div>
+</ion-view>

@@ -1,0 +1,64 @@
+<ion-view title="首页">
+    <ion-nav-buttons class="bar-calm" side="right" >
+        <button class="button button-icon ion-ios-search"></button>
+    </ion-nav-buttons>
+    <ion-content>
+        <img src="images/banner.jpg" class="sizi"/>
+        <div class="row" style="padding: 0;margin-bottom: 1%">
+            <div class="col-24" >
+                <img src="images/02.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24">
+                <img src="images/04.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24">
+                <img src="images/06.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24" style="margin: 0">
+                <img src="images/08.png" class="sizi-sm "/>
+            </div>
+        </div>
+        <div class="row" style="padding: 0;">
+            <div class="col-24">
+                <img src="images/13.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24">
+                <img src="images/14.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24">
+                <img src="images/15.png" class="sizi-sm mg-rig"/>
+            </div>
+            <div class="col-24" style="padding: 0">
+                <img src="images/16.png" class="sizi-sm "/>
+            </div>
+        </div>
+
+        <div class="center-tit">
+            <a href="#" class="wenzhang">文章</a>
+            <a href="#" class="shipin">视频</a>
+            <img src="images/018_03.png" class="more">
+        </div>
+        <ion-list>
+            <ion-item ng-repeat="product in products" class=" item-remove-animate">
+                <div class="center-inner" style="position: relative;">
+                    <img ng-src="{{product.img}}" style="width: 95%;margin-left: 2.5%;"/>
+                    <img src="{{product.images}}" style="border-radius: 50%;position: absolute;right: 9%;bottom: -9%;width:13%; ">
+                    <p style="color: #666666;margin-left: 62%;font-weight: bolder;">{{product.name}}</p>
+                </div>
+                <div style="border-bottom: 2px solid #f2f2f2;margin-left: 4%;margin-right: 4%;">
+                    <p style="color: #ef8703;margin-bottom: 1%">{{product.title}}</p>
+                    <p style="font-size: 1em;margin-bottom: 1%">{{product.inner}}</p>
+                    <p style="color: #5d5d5d;margin-bottom: 1%">{{product.conten}}</p>
+                </div>
+                <div class="shear" style="margin-top: 2%;">
+                    <a href="#" class="ion-ios-eye-outline" style="color: #666666;margin-left: 60%"> {{product.look}}</a>
+                    <a href="#" class="ion-ios-heart-outline" style="color: #666666;margin-left: 3%"> {{product.like}}</a>
+                    <a href="#" class="ion-ios-chatboxes-outline" style="color: #666666;margin-left: 3%"> {{product.yan}}</a>
+                </div>
+            </ion-item>
+            <!--无限滚动（上拉刷新）-->
+            <ion-infinite-scroll distance="1%" immediate-check="false" on-infinite="loadMore()"></ion-infinite-scroll>
+        </ion-list>
+    </ion-content>
+    <div id="top" ng-click="top()" class="icon ion-ios-arrow-up"></div>
+</ion-view>
